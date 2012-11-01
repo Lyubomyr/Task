@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diem</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="container">
+    	<div class="row">
+	   <div class="span4">
+		<div class = "pull-right" >
+			<%= image_tag("cd2.jpg")%>
+		</div>
+	   </div>
+	   <div class="span8 menu">
+		<ul class="nav nav-pills">
+		   <li class="active"><%= link_to t('.home'), root_path%></li>
+	           <li><%= link_to t('.examples') %></li>
+	           <li><%= link_to t('.how_it_works') %></li>
+	           <li><%= link_to t('.prices') %></li>
+	           <li><%= link_to t('.shipping_payment_terms') %></li>
+	           <li><%= link_to t('.order')%></li>
+		</ul>
+	   </div>
+	</div>
+	      <div class="row">
+    		<div class="span2">
+		  <ul class="nav nav-tabs nav-stacked">
+		        <% PictureCategory.all.each do |category| %>
+		          <li><%= link_to category.name %></li>
+			<% end %>
+		  </ul>
+
+    		</div>
+    		<div class="span10">
+	    		<div id="flash">
+	    			<% flash.each do |key, value| %>
+		  			<div class="flash <%= key %>"><%= value %></div>
+				<% end %>
+        		</div>
+        		<%= yield %>
+    		</div>
+    	</div>
+    </div>
+</body>
+      <%= debug(params) if Rails.env.development? %>
+</html>

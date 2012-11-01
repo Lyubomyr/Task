@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    application:
+      home: "Главная"
+      examples: "Примеры"
+      how_it_works: "Как это работает"
+      prices: "Цены"
+      shipping_payment_terms: "Доставка/Оплата/Сроки"
+      order: "Заказать"
