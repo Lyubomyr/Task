@@ -5,7 +5,9 @@ Diem::Application.routes.draw do
   root :to => "pages#home"
   get "pages/home"
   get "pages/price"
-
+  resources :picture_categories, :only => [:index, :show] do
+  	resources :pictures, :only => [:index, :show]
+  end
   #match '*a', :to => 'errors#routing'
 
   # The priority is based upon order of creation:

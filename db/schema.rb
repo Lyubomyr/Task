@@ -68,12 +68,14 @@ ActiveRecord::Schema.define(:version => 20121101185431) do
   add_index "picture_orders", ["user_id"], :name => "index_picture_orders_on_user_id"
 
   create_table "pictures", :force => true do |t|
-    t.string   "foto_category_id"
+    t.string   "picture_category_id"
     t.string   "name"
-    t.string   "foto_path"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "image_path"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
+
+  add_index "pictures", ["picture_category_id"], :name => "index_pictures_on_picture_category_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

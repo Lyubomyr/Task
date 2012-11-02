@@ -8,5 +8,6 @@ class CreatePictures < ActiveRecord::Migration
       t.timestamps
     end
     add_index :pictures, :picture_category_id
+    add_index :pictures, :name
   end
 end
