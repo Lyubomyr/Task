@@ -8,7 +8,7 @@
 #  size        :string(255)
 #  human_count :integer
 #  gel         :boolean
-#  images_path :string(255)
+#  image       :string(255)
 #  comments    :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

@@ -14,26 +14,30 @@
 			<%= image_tag("cd2.jpg")%>
 		</div>
 	   </div>
+	   <h4>
 	   <div class="span8 menu">
 		<ul class="nav nav-pills">
 		   <li class="active"><%= link_to t('.home'), root_path%></li>
-	           <li><%= link_to t('.examples') %></li>
-	           <li><%= link_to t('.how_it_works') %></li>
-	           <li><%= link_to t('.prices') %></li>
-	           <li><%= link_to t('.shipping_payment_terms') %></li>
+	           <li><%= link_to t('.pictures'),
+			picture_category_pictures_path(PictureCategory.first) %></li>
+	           <li><%= link_to t('.about_us') %></li>
+	           <li><%= link_to t('.contacts') %></li>
 	           <li><%= link_to t('.order')%></li>
+
 		</ul>
 	   </div>
+	   </h4>
 	</div>
 	      <div class="row">
     		<div class="span2">
-		  <ul class="nav nav-tabs nav-stacked">
-		        <% PictureCategory.all.each do |category| %>
-		          <li><%= link_to category.name,
-		picture_category_pictures_path(category) %></li>
-			<% end %>
-		  </ul>
-
+		  <% if request && request.url.include?("picture_categories") %>
+			  <ul class="nav nav-tabs nav-stacked">
+				<% PictureCategory.all.each do |category| %>
+				  <li><%= link_to category.name,
+				picture_category_pictures_path(category) %></li>
+				<% end %>
+			  </ul>
+		<% end %>
     		</div>
     		<div class="span10">
 	    		<div id="flash">

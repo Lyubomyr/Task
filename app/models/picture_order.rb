@@ -8,12 +8,16 @@
 #  size        :string(255)
 #  human_count :integer
 #  gel         :boolean
-#  images_path :string(255)
+#  image       :string(255)
 #  comments    :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class PictureOrder < ActiveRecord::Base
-  attr_accessible :comments, :gel, :human_count, :images_path, :picture_id, :size, :user_id
+  belongs_to :user
+  has_many :pictures
+  attr_accessible :comments, :gel, :human_count, :image, :picture_id, :size, :user_id
+
+  mount_uploader :image, ImageUploader
 end

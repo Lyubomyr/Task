@@ -9,7 +9,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Set to DB all categories of pictures
-categories = ['Готовые работы','Мужские портреты','Женские портреты','Парные портреты','Групповые портреты','Репродукции картин']
+categories = ['Мужские портреты','Женские портреты','Парные портреты','Групповые портреты']
+category = ['Готовые работы','Репродукции картин']
 PictureCategory.delete_all
 categories.each_with_index do |category|
 	PictureCategory.create(name: category)
@@ -26,7 +27,7 @@ PictureCategory.all.each do |category|
 		name = path[/[^\/]+\./].to(-2)
 
 		Picture.create({picture_category_id: category.id,
-				name: name, image_path: image_path},
+				name: name, image: image_path},
 				without_protection: true)
 	end
 end

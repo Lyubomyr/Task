@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20121101185431) do
     t.string   "size"
     t.integer  "human_count"
     t.boolean  "gel"
-    t.string   "images_path"
+    t.string   "image"
     t.string   "comments"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -70,11 +70,12 @@ ActiveRecord::Schema.define(:version => 20121101185431) do
   create_table "pictures", :force => true do |t|
     t.string   "picture_category_id"
     t.string   "name"
-    t.string   "image_path"
+    t.string   "image"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
 
+  add_index "pictures", ["name"], :name => "index_pictures_on_name"
   add_index "pictures", ["picture_category_id"], :name => "index_pictures_on_picture_category_id"
 
   create_table "users", :force => true do |t|

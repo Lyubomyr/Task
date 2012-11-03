@@ -7,3 +7,9 @@ ru:
       prices: "Цены"
       shipping_payment_terms: "Доставка/Оплата/Сроки"
       order: "Заказать"
+      about_us: "О Нас"
+      contacts: "Контакты"
+      pictures: "Фотокартины"
+  pictures:
+    index:
+      title: "Шаблоны картин"

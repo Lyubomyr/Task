@@ -3,7 +3,7 @@ class CreatePictures < ActiveRecord::Migration
     create_table :pictures do |t|
       t.string :picture_category_id
       t.string :name
-      t.string :image_path
+      t.string :image
 
       t.timestamps
     end

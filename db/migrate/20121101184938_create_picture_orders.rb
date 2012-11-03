@@ -6,7 +6,7 @@ class CreatePictureOrders < ActiveRecord::Migration
       t.string :size
       t.integer :human_count
       t.boolean :gel
-      t.string :images_path
+      t.string :image
       t.string :comments
 
       t.timestamps

@@ -1,4 +1,8 @@
 Diem::Application.routes.draw do
+  get "picture_orders/new"
+
+  get "picture_orders/show"
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 

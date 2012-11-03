@@ -2,22 +2,12 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:image_path) %></th>
 
-    </tr>
-  </thead>
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <tr>
-        <td><%= link_to picture.id, picture_category_picture_path(@picture_category, picture) %></td>
-        <td><%= picture.name %></td>
-        <td><%= image_tag picture.image_path %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @pictures.each do |picture| %>
+   <div class = "image">
+	<%= link_to picture_category_picture_path(@picture_category, picture) do%>
+		<div class = "pic_name" > <%= picture.name %> </div>
+		<%= image_tag picture.image.to_s, size: "150x100" %>
+	<% end %>
+   </div>
+<% end %>
