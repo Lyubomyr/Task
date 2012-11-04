@@ -17,7 +17,10 @@
 class PictureOrder < ActiveRecord::Base
   belongs_to :user
   has_many :pictures
-  attr_accessible :comments, :gel, :human_count, :image, :picture_id, :size, :user_id
+  attr_accessible :comments, :gel, :human_count, :image, :picture_id, :size
+
+
+  validates :comments, :length => { :maximum => 250 }
 
   mount_uploader :image, ImageUploader
 end

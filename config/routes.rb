@@ -9,6 +9,7 @@ Diem::Application.routes.draw do
   root :to => "pages#home"
   get "pages/home"
   get "pages/price"
+  resources :picture_orders, :only => [:new, :create, :show, :edit, :update]
   resources :picture_categories, :only => [:index, :show] do
   	resources :pictures, :only => [:index, :show]
   end

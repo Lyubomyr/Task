@@ -5,7 +5,7 @@ class CreatePictureOrders < ActiveRecord::Migration
       t.string :picture_id
       t.string :size
       t.integer :human_count
-      t.boolean :gel
+      t.boolean :gel, default: false
       t.string :image
       t.string :comments
 
