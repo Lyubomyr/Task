@@ -4,14 +4,15 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'thin'
+
+#gem 'thin'
 gem 'activeadmin'
 gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
 gem "rmagick"
 gem "carrierwave"
-gem 'will_paginate'
-gem 'twitter-bootstrap-rails', '2.1.3'
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +23,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails', '2.1.4'
 end
 
 group :production do

@@ -7,7 +7,7 @@
 #  picture_id  :string(255)
 #  size        :string(255)
 #  human_count :integer
-#  gel         :boolean
+#  gel         :boolean          default(FALSE)
 #  image       :string(255)
 #  comments    :string(255)
 #  created_at  :datetime         not null

@@ -1,6 +1,7 @@
 class PictureOrdersController < ApplicationController
   def new
 	@picture_order = PictureOrder.new
+	@user = @picture_order.build_user
   end
 
   def show
@@ -8,7 +9,8 @@ class PictureOrdersController < ApplicationController
   end
 
  def create
-    @picture_order = PictureOrder.new(params[:id])
+    @picture_order = PictureOrder.new(params[:picture_order])
+
     if @picture_order.save
       flash[:success] = "Picture Order successfuly created"
       redirect_to @picture_order

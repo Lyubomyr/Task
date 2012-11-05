@@ -57,11 +57,11 @@ ActiveRecord::Schema.define(:version => 20121101185431) do
     t.string   "picture_id"
     t.string   "size"
     t.integer  "human_count"
-    t.boolean  "gel"
+    t.boolean  "gel",         :default => false
     t.string   "image"
     t.string   "comments"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "picture_orders", ["picture_id"], :name => "index_picture_orders_on_picture_id"
