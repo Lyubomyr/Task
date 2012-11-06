@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-  default from: "prumat3@gmail.com"
+  default from: "info@diem.com.ua"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,6 +9,6 @@ class OrderMailer < ActionMailer::Base
   def picture_order_created(picture_order)
     @picture_order = picture_order
 
-    mail to: "fedorniakl@gmail.com",  subject: "New order created"
+    mail to: "fedorniakl@gmail.com", cc: "brusd.com@gmail.com",  subject: "New order created"
   end
 end

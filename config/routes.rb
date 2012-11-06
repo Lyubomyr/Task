@@ -1,18 +1,15 @@
 Diem::Application.routes.draw do
-  get "picture_orders/new"
-
-  get "picture_orders/show"
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => "pages#home"
-  get "pages/home"
-  get "pages/price"
+  root :to => "picture_categories#index"
+
   resources :picture_orders, :only => [:new, :create, :show, :edit, :update]
   resources :picture_categories, :only => [:index, :show] do
   	resources :pictures, :only => [:index, :show]
   end
+
+  get ':id', to: 'pages#show', as: :page
   #match '*a', :to => 'errors#routing'
 
   # The priority is based upon order of creation:

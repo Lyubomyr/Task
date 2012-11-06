@@ -5,6 +5,19 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36096893-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
     <div class="container">
@@ -17,11 +30,10 @@
 	   <h4>
 	   <div class="span8 menu">
 		<ul class="nav nav-pills">
-		   <li class="active"><%= link_to t('.home'), root_path%></li>
-	           <li><%= link_to t('.pictures'),
-			picture_category_pictures_path(PictureCategory.first) %></li>
-	           <li><%= link_to t('.about_us') %></li>
-	           <li><%= link_to t('.contacts') %></li>
+		   <li class="active"><%= link_to t('.home'), picture_categories_path%></li>
+	           <li><%= link_to t('.pictures'), picture_categories_path %></li>
+	           <li><%= link_to t('.about'), page_path('about') %></li>
+	           <li><%= link_to t('.contacts'), page_path('contacts') %></li>
 	           <li><%= link_to t('.order'), new_picture_order_path %></li>
 
 		</ul>

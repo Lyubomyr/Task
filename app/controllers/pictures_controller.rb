@@ -2,7 +2,7 @@ class PicturesController < ApplicationController
   before_filter :get_category
   def index
 	@pictures = Picture.where('picture_category_id = ?', params[:picture_category_id])
-		#.paginate(:page => params[:page], :per_page => 20)
+			.page(params[:page]).per(20)
   end
 
   def show

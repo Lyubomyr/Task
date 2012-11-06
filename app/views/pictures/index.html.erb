@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-
+<%= paginate @pictures %>
 <% @pictures.each do |picture| %>
    <div class = "image">
 	<%= link_to picture_category_picture_path(@picture_category, picture) do%>

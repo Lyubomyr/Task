@@ -218,6 +218,7 @@ DEPENDENCIES
   debugger
   factory_girl_rails
   jquery-rails
+  kaminari
   pg
   rails (= 3.2.8)
   rmagick

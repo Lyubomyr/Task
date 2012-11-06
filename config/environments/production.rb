@@ -50,7 +50,16 @@ Diem::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+	config.action_mailer.delivery_method = :smtp
 
+	config.action_mailer.smtp_settings = {
+		:address => 'smtp.gmail.com',
+		:port => 25,
+		:authentication => :login,
+		:user_name => 'info@diem.com.ua',
+		:password => 'CarpeDiem321' }
+
+	config.action_mailer.raise_delivery_errors = true
   # Enable threaded mode
   # config.threadsafe!
 

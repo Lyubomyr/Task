@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  def home
-  end
-
-  def price
+  def show
+	@page = Page.find_by_permalink!(params[:id])
   end
 end

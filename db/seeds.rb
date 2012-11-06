@@ -8,6 +8,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#Create static pages
+Page.delete_all
+Page.create(name: 'about', content: 'Text', permalink: 'about')
+Page.create(name: 'contacts', content: 'Text', permalink: 'contacts')
+
 #Set to DB all categories of pictures
 categories = ['Мужские портреты','Женские портреты','Парные портреты','Групповые портреты']
 category = ['Готовые работы','Репродукции картин']
