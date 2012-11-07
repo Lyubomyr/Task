@@ -6,7 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'thin'
-  gem 'twitter-bootstrap-rails'
+
 gem 'activeadmin'
 gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'simple_form'
 # Gems used only for assets and not required
 # in production environments by default.
+gem 'twitter-bootstrap-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
