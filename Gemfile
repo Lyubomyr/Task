@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'thin'
+  gem 'twitter-bootstrap-rails'
 gem 'activeadmin'
 gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
@@ -24,7 +25,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails'
+
 end
 
 group :production do
