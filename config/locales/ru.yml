@@ -1,6 +1,9 @@
 ru:
+  about: "О Нас"
+  contacts: "Контакты"
   layouts:
     application:
+      title: "Главная"
       home: "Главная"
       examples: "Примеры"
       how_it_works: "Как это работает"
