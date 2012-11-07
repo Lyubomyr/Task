@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
   validates :mname, length: { maximum: 50 }
   validates :surname, presence: true, length: { maximum: 50 }
-  validates :email, presence: true, format: {with: email_regex},
-		uniqueness: {case_sensitive: false}
+  validates :email, presence: true, format: {with: email_regex}
+		#uniqueness: {case_sensitive: false}
   validates :address, length: { maximum: 100 }
   validates :tel, presence: true, length: { maximum: 20 }
 

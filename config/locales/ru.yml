@@ -16,9 +16,6 @@ ru:
   pictures:
     index:
       title: "Шаблоны картин"
-  picture_orders:
-    form:
-      size: "Розмер"
   views:
     pagination:
       first: "Первая"
@@ -26,3 +23,22 @@ ru:
       previous: "&lt;Назад"
       next: "Вперед&gt;"
       truncate: "..."
+  shared:
+    error_messages:
+      problem: "Следующие поля заполнены не правильно:"
+      error: "ошибка"
+  activerecord:
+    attributes:
+      user:
+        name: "Имя"
+        mname: "Очество"
+        surname: "Фамилия"
+        email: "Емейл"
+        address: "Адресс"
+        tel: "Телефон"
+      picture_order:
+        size: "Рaзмер"
+        gel: "Гель"
+        human_count: "Количество Людей"
+        image: "Фото"
+        comments: "Дополнительная информация"
