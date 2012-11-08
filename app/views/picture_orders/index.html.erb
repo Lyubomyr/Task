@@ -31,7 +31,8 @@
         <td><%=l picture_order.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_picture_order_path(picture_order), :class => 'btn btn-mini' %>
+                      edit_picture_order_path(picture_order),
+				:class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       picture_order_path(picture_order),
                       :method => :delete,

@@ -5,7 +5,7 @@ class PictureOrdersController < ApplicationController
   end
 
   def show
-	@picture_order = PictureOrder.find_by_id(params[:id])
+	@picture_order = PictureOrder.find(params[:id])
   end
 
  def create

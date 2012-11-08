@@ -1,0 +1,14 @@
+<%- model_class = PhotoPicture -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<%= paginate @photo_pictures %>
+<% @photo_pictures.each do |picture| %>
+   <div class = "image">
+	<%= link_to photo_picture_picture_path(@photo_picture, picture) do%>
+		<div class = "pic_name" > <%= picture.name %> </div>
+		<%= image_tag picture.image.to_s, size: "150x100" %>
+	<% end %>
+   </div>
+<% end %>

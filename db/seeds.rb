@@ -10,29 +10,28 @@
 
 #Create static pages
 Page.delete_all
+Page.create(name: 'home', content: 'Text', permalink: 'home')
 Page.create(name: 'about', content: 'Text', permalink: 'about')
 Page.create(name: 'contacts', content: 'Text', permalink: 'contacts')
 
-#Set to DB all categories of pictures
-categories = ['Мужские портреты','Женские портреты','Парные портреты','Групповые портреты']
-category = ['Готовые работы','Репродукции картин']
-PictureCategory.delete_all
-categories.each_with_index do |category|
-	PictureCategory.create(name: category)
+#Set to DB all picture categories
+PhotoPicture.delete_all
+Dir.glob('public/assets/pictures/*').each do |category_path|
+	PhotoPicture.create(name: category_path.from(23))
 end
 
 #Set to DB all pictures
 Picture.delete_all
-PictureCategory.all.each do |category|
-	files_path = Dir.glob("app/assets/images/pictures/#{category.name}/*")
+PhotoPicture.all.each do |category|
+	files_path = Dir.glob("public/assets/pictures/#{category.name}/*")
 	image_path = ''
 	name = ''
 	files_path.each do |path|
-		image_path = path.from(18)
+		image_path = path.from(14)
 		name = path[/[^\/]+\./].to(-2)
 
-		Picture.create({picture_category_id: category.id,
-				name: name, image: image_path},
-				without_protection: true)
+		Picture.create({photo_picture_id: category.id, name: name,
+		image: image_path, title: name, alt: name, text: name },
+		without_protection: true)
 	end
 end

@@ -9,7 +9,8 @@
 #  human_count :integer
 #  gel         :boolean          default(FALSE)
 #  image       :string(255)
-#  comments    :string(255)
+#  comments    :text
+#  slug        :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -18,8 +19,8 @@ class PictureOrder < ActiveRecord::Base
   belongs_to :user
   has_many :pictures
   accepts_nested_attributes_for :user
-  attr_accessible :user_attributes, :comments, :gel,
-		:human_count, :image, :picture_id, :size
+  attr_accessible :user_attributes, :comments, :gel,:human_count,
+		:image, :picture_id, :size
 
   validates :image, presence: true
   validates :comments, :length => { :maximum => 250 }

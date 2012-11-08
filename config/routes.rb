@@ -1,12 +1,13 @@
 Diem::Application.routes.draw do
-  ActiveAdmin.routes(self)
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  root :to => "picture_categories#index"
-
+  root :to => "photo_pictures#index"
   resources :picture_orders, :only => [:new, :create, :show, :edit, :update]
-  resources :picture_categories, :only => [:index, :show] do
-  	resources :pictures, :only => [:index, :show]
+
+
+  resources :photo_pictures, :only => [:index, :show] do
+  	match ':id' => 'pictures#show', as: :picture
   end
 
   get ':id', to: 'pages#show', as: :page

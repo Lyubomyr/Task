@@ -2,15 +2,24 @@
 #
 # Table name: pictures
 #
-#  id                  :integer          not null, primary key
-#  picture_category_id :string(255)
-#  name                :string(255)
-#  image               :string(255)
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  id               :integer          not null, primary key
+#  photo_picture_id :integer
+#  name             :string(255)
+#  image            :string(255)
+#  slug             :string(255)
+#  title            :string(255)
+#  alt              :string(255)
+#  text             :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class Picture < ActiveRecord::Base
-  has_one :picture_category
-  attr_accessible :picture_category_id, :image_path, :name
+  belongs_to :photo_picture
+
+  attr_accessible :name, :image, :title, :alt, :text
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
 end

@@ -1,6 +1,11 @@
 ru:
   about: "О Нас"
   contacts: "Контакты"
+  men: "Мужские портреты"
+  women: "Женские портреты"
+  pairs: "Парные портреты"
+  groups: "Групповые портреты"
+  examples: "Репродукции картин"
   layouts:
     application:
       title: "Главная"
@@ -36,7 +41,7 @@ ru:
         email: "Емейл"
         address: "Адресс"
         tel: "Телефон"
-      picture_order:
+      photo_picture:
         size: "Рaзмер"
         gel: "Гель"
         human_count: "Количество Людей"

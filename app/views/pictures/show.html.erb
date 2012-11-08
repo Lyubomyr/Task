@@ -1,11 +1,5 @@
-<%- model_class = Picture -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              picture_category_pictures_path(), :class => 'btn'  %>
-</div>
+<%= title @picture.title	%>
+<%=  @picture.text.to_s%>
 <div>
-	<%= image_tag @picture.image.to_s%>
+	<%= image_tag @picture.image.to_s, alt: @picture.alt%>
 </div>

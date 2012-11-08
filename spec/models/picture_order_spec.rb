@@ -9,7 +9,8 @@
 #  human_count :integer
 #  gel         :boolean          default(FALSE)
 #  image       :string(255)
-#  comments    :string(255)
+#  comments    :text
+#  slug        :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

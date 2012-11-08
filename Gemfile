@@ -7,13 +7,15 @@ gem 'rails', '3.2.8'
 
 #gem 'thin'
 
-gem 'activeadmin'
+gem 'devise'
+gem 'rails_admin'
 gem 'jquery-rails'
 gem 'russian', '~> 0.6.0'
 gem "rmagick"
 gem "carrierwave"
 gem 'kaminari'
 gem 'simple_form'
+gem 'friendly_id'
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'twitter-bootstrap-rails'
