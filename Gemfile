@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'thin'
+gem 'thin'
 
 gem 'devise'
 gem 'rails_admin'
@@ -22,8 +22,6 @@ gem 'twitter-bootstrap-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem "less", "~> 2.2.2"
-  gem "less-rails", "~> 2.2.6"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
 
