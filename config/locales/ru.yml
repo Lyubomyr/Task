@@ -1,4 +1,5 @@
 ru:
+  home: "Главная"
   about: "О Нас"
   contacts: "Контакты"
   men: "Мужские портреты"
@@ -6,6 +7,7 @@ ru:
   pairs: "Парные портреты"
   groups: "Групповые портреты"
   examples: "Репродукции картин"
+  photo_pictures: "Фотокартины"
   layouts:
     application:
       title: "Главная"

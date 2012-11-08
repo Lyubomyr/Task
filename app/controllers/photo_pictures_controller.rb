@@ -1,5 +1,6 @@
 class PhotoPicturesController < ApplicationController
   def index
+	@page = Page.find_by_name('photo_pictures')
   end
 
   def show
