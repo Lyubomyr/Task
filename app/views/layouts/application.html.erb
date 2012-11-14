@@ -13,13 +13,15 @@
     <div class="container">
     	<div class="row">
 	   <div class="span4">
-		<div class = "pull-right" >
+	      <%= link_to root_path do %>
+		<div id="logo">
 			<%= image_tag("cd2.jpg")%>
 		</div>
+	      <% end %>
 	   </div>
 	   <h3>
 	   <div class="span8 menu">
-		<ul class="nav nav-pills">
+		<ul id = "menu" class="nav nav-pills">
 		   <li><%= link_to t('.home'), page_path('home') %></li>
 	           <li><%= link_to t('.pictures'), photo_pictures_path %></li>
 	           <li><%= link_to t('.about'), page_path('about') %></li>
@@ -31,8 +33,11 @@
 	   </h3>
 	</div>
 	      <div class="row">
-    		<div class="span2">
+    		<div class="span2 offset1">
 		  <% if request && request.url.include?("photo_picture") %>
+			  <div id = "submenu">
+			  	<%= t('.categories') %>
+			  </div>
 			  <ul class="nav nav-tabs nav-stacked">
 				<% PhotoPicture.all.each do |category| %>
 				  <li><%= link_to t(category.name),
@@ -41,7 +46,7 @@
 			  </ul>
 		<% end %>
     		</div>
-    		<div class="span10">
+    		<div class="span9">
 	    		<div id="flash">
 	    			<% flash.each do |name, msg| %>
 				  <div class="alert alert-<%= name == :notice ?

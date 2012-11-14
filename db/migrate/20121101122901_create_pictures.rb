@@ -4,6 +4,7 @@ class CreatePictures < ActiveRecord::Migration
       t.integer :photo_picture_id
       t.string :name
       t.string :image
+      t.string :image_mini
       t.string :slug
       t.string :title
       t.string :alt

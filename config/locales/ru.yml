@@ -20,6 +20,7 @@ ru:
       about: "О Нас"
       contacts: "Контакты"
       pictures: "Фотокартины"
+      categories: "Категории"
   pictures:
     index:
       title: "Шаблоны картин"
