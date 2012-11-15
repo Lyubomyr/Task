@@ -1,7 +1,9 @@
 <%= title @picture.title %>
 </br>
-<%= simple_format @page.content.to_s%>
+<%= simple_format @picture.text.to_s%>
+</br>
 <div>
 	<%= image_tag @picture.image.to_s, alt: @picture.alt%>
 </div>
-<%= simple_format @picture.text.to_s%>
+</br>
+<%= simple_format @page.content.to_s%>
