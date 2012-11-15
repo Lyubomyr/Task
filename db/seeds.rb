@@ -15,7 +15,12 @@ Page.delete_all
 Page.create(name: 'home', content: 'Text', permalink: 'home')
 Page.create(name: 'about', content: 'Text', permalink: 'about')
 Page.create(name: 'contacts', content: 'Text', permalink: 'contacts')
-Page.create(name: 'photo_pictures', content: 'photo_pictures', permalink: 'photo_pictures')
+Page.create(name: 'pictures', content: 'same for all pictures', permalink:
+			'photo_pictures/category_name/picture_name')
+Page.create(name: 'photo_pictures', content: 'photo_pictures', permalink:
+							'photo_pictures')
+Page.create(name: 'picture_orders', content: 'picture_orders', permalink:
+						'picture_orders/new')
 
 #Set to DB all picture categories
 PhotoPicture.delete_all

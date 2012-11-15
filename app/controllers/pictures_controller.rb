@@ -7,5 +7,6 @@ class PicturesController < ApplicationController
   def show
 	@picture = PhotoPicture.find(params[:photo_picture_id]).
 				pictures.find(params[:id])
+	@page = Page.find_by_name('pictures')
   end
 end

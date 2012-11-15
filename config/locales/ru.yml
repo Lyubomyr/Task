@@ -7,7 +7,8 @@ ru:
   pairs: "Парные портреты"
   groups: "Групповые портреты"
   examples: "Репродукции картин"
-  photo_pictures: "Фотокартины"
+  photo_pictures: "Фото картины"
+  picture_orders: "Заказать"
   layouts:
     application:
       title: "Главная"
@@ -19,7 +20,7 @@ ru:
       order: "Заказать"
       about: "О Нас"
       contacts: "Контакты"
-      pictures: "Фотокартины"
+      pictures: "Фото картины"
       categories: "Категории"
   pictures:
     index:

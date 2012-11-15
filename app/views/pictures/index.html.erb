@@ -1,7 +1,4 @@
-<%- model_class = Picture -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
+<%= title t @page.name %>
 <%= paginate @Photo_pictures %>
 <% @Photo_pictures.each do |picture| %>
    <div class = "image">

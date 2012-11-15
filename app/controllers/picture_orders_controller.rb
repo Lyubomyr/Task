@@ -1,4 +1,10 @@
 class PictureOrdersController < ApplicationController
+  before_filter :title
+
+  def title
+	@page = Page.find_by_name('picture_orders')
+  end
+
   def new
 	@picture_order = PictureOrder.new
 	@user = @picture_order.build_user

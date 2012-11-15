@@ -23,4 +23,8 @@ class Picture < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :scoped, :scope => :photo_picture
 
+  def should_generate_new_friendly_id?
+	name_changed?
+  end
+
 end
