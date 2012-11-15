@@ -5,6 +5,7 @@ class PicturesController < ApplicationController
   end
 
   def show
-	@picture = Picture.find(params[:id])
+	@picture = PhotoPicture.find(params[:photo_picture_id]).
+				pictures.find(params[:id])
   end
 end
