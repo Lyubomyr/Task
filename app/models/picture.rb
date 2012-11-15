@@ -6,6 +6,7 @@
 #  photo_picture_id :integer
 #  name             :string(255)
 #  image            :string(255)
+#  image_mini       :string(255)
 #  slug             :string(255)
 #  title            :string(255)
 #  alt              :string(255)
@@ -20,6 +21,6 @@ class Picture < ActiveRecord::Base
   attr_accessible :name, :image, :title, :alt, :text
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: :scoped, :scope => :photo_picture
 
 end

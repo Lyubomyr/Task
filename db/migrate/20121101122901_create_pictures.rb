@@ -13,6 +13,6 @@ class CreatePictures < ActiveRecord::Migration
       t.timestamps
     end
     add_index :pictures, :photo_picture_id
-    add_index :pictures, :name
+    add_index :pictures, :slug
   end
 end

@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(:version => 20121107225922) do
     t.datetime "updated_at",       :null => false
   end
 
-  add_index "pictures", ["name"], :name => "index_pictures_on_name"
   add_index "pictures", ["photo_picture_id"], :name => "index_pictures_on_photo_picture_id"
+  add_index "pictures", ["slug"], :name => "index_pictures_on_slug"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"

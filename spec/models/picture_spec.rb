@@ -6,6 +6,7 @@
 #  photo_picture_id :integer
 #  name             :string(255)
 #  image            :string(255)
+#  image_mini       :string(255)
 #  slug             :string(255)
 #  title            :string(255)
 #  alt              :string(255)
