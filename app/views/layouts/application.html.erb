@@ -8,6 +8,16 @@
   <script type="text/javascript"></script>
   <meta name="google-site-verification" content="4nuxYuLobVIe-nKa-
 					WPk4JcsR9zjx16XIhiW-bsWIeE" />
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-HS3Q"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-HS3Q');</script>
+	<!-- End Google Tag Manager -->
 </head>
 
 <body>
@@ -42,19 +52,27 @@
 
     <div class="container">
 	<div class="row main">
-		<div class="span3">
+		<div class="span3 ">
+		    <div id = "left">
 			&nbsp;
-		  <% if request && request.url.include?("photo_picture") %>
-			  <div id = "submenu">
-			  	<%= t('.categories') %>
-			  </div>
-			  <ul class="nav nav-tabs nav-stacked">
-				<% PhotoPicture.all.each do |category| %>
-				  <li><%= link_to t(category.name),
-				photo_picture_path(category) %></li>
-				<% end %>
-			  </ul>
-		<% end %>
+			  <% if request && request.url.include?("photo_picture") %>
+				  <div id = "submenu">
+				  	<%= t('.categories') %>
+				  </div>
+				  <ul class="nav nav-tabs nav-stacked">
+					<% PhotoPicture.all.each do |category| %>
+					  <li><%= link_to t(category.name),
+					photo_picture_path(category) %></li>
+					<% end %>
+				  </ul>
+			<% end %>
+		    </div>
+		    <div id="socials">
+			<div id="fb-root"></div>
+			<div class="g-plus" data-width="270"
+	data-href="//plus.google.com/104671163297724987053" data-rel="publisher"></div>
+		    </div>
+
 		</div>
 		<div class="span9">
 			<div id="flash">

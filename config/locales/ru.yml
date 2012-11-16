@@ -36,18 +36,10 @@ ru:
     error_messages:
       problem: "Следующие поля заполнены не правильно:"
       error: "ошибка"
-  activerecord:
-    attributes:
-      user:
-        name: "Имя"
-        mname: "Очество"
-        surname: "Фамилия"
-        email: "Емейл"
-        address: "Адресс"
-        tel: "Телефон"
-      photo_picture:
-        size: "Рaзмер"
-        gel: "Гель"
-        human_count: "Количество Людей"
-        image: "Фото"
-        comments: "Дополнительная информация"
+
+  simple_form:
+    labels:
+      picture_order:
+        human_count: "Количество персон на фото:"
+        size: "Размер полотна:"
+        frame: "Тип рамки:"

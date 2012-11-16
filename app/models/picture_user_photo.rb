@@ -11,7 +11,7 @@
 
 class PictureUserPhoto < ActiveRecord::Base
   belongs_to :picture_order
-  attr_accessible :image, :picture_order_id
+  attr_accessible :image
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, PictureUserPhotoUploader
 end
