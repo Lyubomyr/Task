@@ -10,22 +10,22 @@
   <dd><%= @picture_order.human_count %></dd>
   <dt><strong><%= model_class.human_attribute_name(:gel) %>:</strong></dt>
   <dd><%= @picture_order.gel %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>
   <dd><%= image_tag @picture_order.image, size: '100x100' %></dd>
   <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
   <dd><%= @picture_order.comments %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
   <dd><%= @picture_order.user.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mname) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_mname) %>:</strong></dt>
   <dd><%= @picture_order.user.mname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_surname) %>:</strong></dt>
   <dd><%= @picture_order.user.surname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_email) %>:</strong></dt>
   <dd><%= @picture_order.user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_address) %>:</strong></dt>
   <dd><%= @picture_order.user.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tel) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:user_tel) %>:</strong></dt>
   <dd><%= @picture_order.user.tel %></dd>
 </dl>
 

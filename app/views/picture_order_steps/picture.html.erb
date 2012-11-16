@@ -1,14 +1,13 @@
-<%= simple_form_for @picture_order, :html => { :multipart => true } do |f| %>
+<%= simple_form_for @picture, :html => { :multipart => true } do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
 
   <%= f.input :human_count, collection: 1..9, :include_blank => false %>
   <%= f.input :size, collection: ['70x50', '80x60'], :include_blank => false %>
   <%= f.input :gel %>
-  <%= f.input :image %>
-  <%= f.input :comments %>
-  <%= f.simple_fields_for :user do |builder| %>
-  	<%= render 'user', f: builder %>
+  <%= f.simple_fields_for :picture_user_photo do |builder| %>
+  	<%= builder.input :image %>
   <% end %>
+  <%= f.input :comments %>
   <%= f.button :submit %>
 
 <% end %>

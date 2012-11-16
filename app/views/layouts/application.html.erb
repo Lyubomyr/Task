@@ -41,7 +41,7 @@
     </div>
 
     <div class="container">
-	<div class="row">
+	<div class="row main">
 		<div class="span3">
 			&nbsp;
 		  <% if request && request.url.include?("photo_picture") %>
@@ -70,6 +70,12 @@
 		</div>
     	</div>
 
+    </div>
+
+    <div class="container-fluid footer">
+	<div class="row-fluid copy">
+		&copy Carpe Diem 2012
+	</div>
     </div>
 </body>
       <%= debug(params) if Rails.env.development? %>

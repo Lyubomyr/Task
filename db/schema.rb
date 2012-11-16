@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121107225922) do
+ActiveRecord::Schema.define(:version => 20121116125244) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -59,21 +59,49 @@ ActiveRecord::Schema.define(:version => 20121107225922) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "picture_order_calcs", :force => true do |t|
+    t.string   "size"
+    t.string   "frame"
+    t.string   "human_count"
+    t.text     "comments"
+    t.text     "first_step"
+    t.text     "second_step"
+    t.text     "third_step"
+    t.text     "greeting"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "picture_orders", :force => true do |t|
-    t.string   "user_id"
-    t.string   "picture_id"
+    t.integer  "picture_id"
     t.string   "size"
     t.integer  "human_count"
-    t.boolean  "gel",         :default => false
-    t.string   "image"
+    t.boolean  "gel",          :default => false
+    t.string   "frame"
     t.text     "comments"
+    t.string   "status",       :default => "new"
     t.string   "slug"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.string   "user_name"
+    t.string   "user_mname"
+    t.string   "user_surname"
+    t.string   "user_email"
+    t.string   "user_tel"
+    t.string   "user_address"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   add_index "picture_orders", ["picture_id"], :name => "index_picture_orders_on_picture_id"
-  add_index "picture_orders", ["user_id"], :name => "index_picture_orders_on_user_id"
+  add_index "picture_orders", ["status"], :name => "index_picture_orders_on_status"
+
+  create_table "picture_user_photos", :force => true do |t|
+    t.integer  "picture_order_id"
+    t.string   "image"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "picture_user_photos", ["picture_order_id"], :name => "index_picture_user_photos_on_picture_order_id"
 
   create_table "pictures", :force => true do |t|
     t.integer  "photo_picture_id"
@@ -103,16 +131,5 @@ ActiveRecord::Schema.define(:version => 20121107225922) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "mname"
-    t.string   "surname"
-    t.string   "email"
-    t.string   "address"
-    t.integer  "tel"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
 end
