@@ -28,6 +28,13 @@ Dir.glob('public/assets/pictures/*').each do |category_path|
 	PhotoPicture.create(name: category_path.from(23))
 end
 
+#Set to DB few picture order calc
+PictureOrderCalc.delete_all
+PictureOrderCalc.create(size: '30x40-210grn', frame: '1-75grn', human_count: '1-80grn', 		comments: 'additional options', first_step: 'First Step Text', second_step:
+'Second Step Text', third_step: 'Third Step Text', greeting:
+					'Congratulate with order creation')
+PictureOrderCalc.create(size: '30x50-240grn', frame: '2-75grn', human_count: '2-160grn')
+
 #Set to DB all pictures
 Picture.delete_all
 PhotoPicture.all.each do |category|

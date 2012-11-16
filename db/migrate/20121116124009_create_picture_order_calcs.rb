@@ -12,9 +12,5 @@ class CreatePictureOrderCalcs < ActiveRecord::Migration
 
       t.timestamps
     end
-  PictureOrderCalc.create!(size: '30x40-210grn', frame: '1-75grn', human_count: '1-80grn', 		comments: 'additional options', first_step: 'First Step Text', second_step:
-  'Second Step Text', third_step: 'Third Step Text', greeting:
-  						'Congratulate with order creation')
-  PictureOrderCalc.create!(size: '30x50-240grn', frame: '2-75grn', human_count: '2-160grn')
   end
 end
