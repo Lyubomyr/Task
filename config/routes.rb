@@ -3,8 +3,9 @@ Diem::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   root :to => "photo_pictures#index"
+
   resources :picture_orders
-  resources :picture_order_steps
+
   resources :photo_pictures, :only => [:index, :show] do
   	match ':id' => 'pictures#show', as: :picture
   end

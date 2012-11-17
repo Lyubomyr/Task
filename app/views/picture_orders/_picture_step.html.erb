@@ -1,6 +1,3 @@
-<%= simple_form_for @picture, url: wizard_path, :html => { :multipart => true } do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-
   <%= @calc.first_step %>
   </br>
   <%= f.input :human_count, collection: @human_counts, :include_blank => false %>
@@ -11,6 +8,3 @@
   <% end %>
   <%= f.input :gel %>
   <%= f.input :comments, :as => :text, :input_html => { rows: 5 } %>
-  <%= f.button :submit %>
-
-<% end %>

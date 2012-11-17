@@ -1,0 +1,8 @@
+<%= simple_form_for @order, :html => { :multipart => true } do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+
+	<%= render "#{@order.current_step}_step", :f => f %>
+
+  <p><%= f.button :submit, 'Continue' %></p>
+  <p><%= f.button :submit, "Back", :name => "back_button" unless @order.first_step? %></p>
+<% end %>

@@ -1,0 +1,5 @@
+ <%= @calc.third_step %>
+
+<% for attribute in @order.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @order.attributes[attribute].to_s %></p>
+<% end %>
