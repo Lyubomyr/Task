@@ -25,9 +25,10 @@ class PictureOrder < ActiveRecord::Base
   has_many :pictures
   has_many :picture_user_photos
   accepts_nested_attributes_for :picture_user_photos
+  accepts_nested_attributes_for :pictures
 
-attr_accessible :picture_user_photo_attributes, :size, :human_count, :gel, :frame, :comments,
-	:user_name, :user_mname, :user_surname, :user_email, :user_tel, :user_address
+attr_accessible :picture_user_photo_attributes, :pictures_attributes, :size, :human_count, :gel,
+:frame, :comments, :user_name, :user_mname, :user_surname, :user_email, :user_tel, :user_address
 
 attr_writer :current_step
 

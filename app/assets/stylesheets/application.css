@@ -12,4 +12,5 @@
  *= require bootstrap_and_overrides
  *= require pictures
  *= require photo_pictures
+ *= require picture_orders
  */

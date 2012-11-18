@@ -9,14 +9,14 @@ ru:
   examples: "Репродукции картин"
   photo_pictures: "Фото картины"
   picture_orders: "Заказать"
+  frames: "Типы рамок:"
+
   layouts:
     application:
       title: "Главная"
       home: "Главная"
       examples: "Примеры"
-      how_it_works: "Как это работает"
       prices: "Цены"
-      shipping_payment_terms: "Доставка/Оплата/Сроки"
       order: "Заказать"
       about: "О Нас"
       contacts: "Контакты"
@@ -37,9 +37,20 @@ ru:
       problem: "Следующие поля заполнены не правильно:"
       error: "ошибка"
 
+  picture_orders:
+    picture:
+      new:
+        id_on_photo_picture:  "sadfasdfasdf"
   simple_form:
     labels:
       picture_order:
         human_count: "Количество персон на фото:"
         size: "Размер полотна:"
         frame: "Тип рамки:"
+        gel: "Нужен текстурный гель?"
+        picture_user_photos: "Загрузите ваше фото"
+        comments: "Коментарии:"
+        picture_photo_picture: "Коментариия:"
+    options:
+      picture_order:
+        pairs: 'Male'

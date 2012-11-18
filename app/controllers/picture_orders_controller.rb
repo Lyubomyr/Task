@@ -38,6 +38,8 @@ private
     @human_counts = PictureOrderCalc.all.map {|calc| calc.human_count}
     @sizes = PictureOrderCalc.all.map {|calc| calc.size}
     @frames = PictureOrderCalc.all.map {|calc| calc.frame}
+    @photo_pictures = PhotoPicture.all
+    @pictures = PhotoPicture.all.map {|category| category.pictures.map {|pic| category.name + ' - ' + pic.name} }
   end
 
 
