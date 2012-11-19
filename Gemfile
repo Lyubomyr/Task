@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'thin'
+#gem 'thin'
 
 gem 'devise'
 gem 'rails_admin'
@@ -17,7 +17,7 @@ gem 'kaminari'
 gem 'simple_form'
 gem 'friendly_id'
 gem 'sitemap_generator'
-gem 'wicked'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,7 +28,6 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
   gem 'uglifier', '>= 1.0.3'
-
 end
 
 group :production do

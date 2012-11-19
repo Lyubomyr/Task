@@ -5,11 +5,28 @@ ru:
     required:
       text: 'Обязательное'
       mark: '*'
-      # You can uncomment the line below if you need to overwrite the whole required html.
-      # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Пожайлуста, исправте ошибки ниже:"
+    labels:
+      picture_order:
+        human_count: "Количество персон на фото:"
+        size: "Размер полотна:"
+        frame: "Тип рамки:"
+        gel: "Нужен текстурный гель?"
+        picture_user_photos: "Загрузите ваше фото"
+        comments: "Коментарии:"
+        picture_photo_picture: "Коментариия:"
+        image: "Добавьте одно или несколько своих фото:"
+        picture: "Выберете сначала категорию, а потом картину для обработки"
+        user_name: "Ваше Имя"
+        user_mname: "Отчество"
+        user_surname: "Фамилия"
+        user_email: "Емейл"
+        user_tel: "Телефон для связи"
+        user_address: "Адресс (куда доставлять)"
+    options:
+      photo_pictures:
+        pairs: 'Парные'
     # Labels and hints examples
     # labels:
     #   defaults:

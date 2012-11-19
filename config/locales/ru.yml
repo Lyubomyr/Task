@@ -10,7 +10,11 @@ ru:
   photo_pictures: "Фото картины"
   picture_orders: "Заказать"
   frames: "Типы рамок:"
+  remove: "удалить фото"
 
+  errors:
+    messages:
+      extension_white_list_error: "Допустимые форматы для фото: jpg jpeg gif png"
   layouts:
     application:
       title: "Главная"
@@ -38,19 +42,22 @@ ru:
       error: "ошибка"
 
   picture_orders:
-    picture:
-      new:
-        id_on_photo_picture:  "sadfasdfasdf"
-  simple_form:
-    labels:
-      picture_order:
-        human_count: "Количество персон на фото:"
-        size: "Размер полотна:"
-        frame: "Тип рамки:"
-        gel: "Нужен текстурный гель?"
-        picture_user_photos: "Загрузите ваше фото"
-        comments: "Коментарии:"
-        picture_photo_picture: "Коментариия:"
-    options:
-      picture_order:
-        pairs: 'Male'
+    form:
+      add_fields: "+ еще 1 фото"
+    show:
+      human_count: "Количество персон на фото:"
+      size: "Размер полотна:"
+      frame: "Тип рамки:"
+      gel: "Нужен текстурный гель?"
+      picture_user_photos: "Загрузите ваше фото"
+      comments: "Коментарии:"
+      picture_photo_picture: "Коментариия:"
+      image: "Добавьте одно или несколько своих фото:"
+      picture: "Картина:"
+      user_name: "Ваше Имя"
+      user_mname: "Отчество"
+      user_surname: "Фамилия"
+      user_email: "Емейл"
+      user_tel: "Телефон"
+      user_address: "Адресс (куда доставлять)"
+      photo: "Фото для обработки"

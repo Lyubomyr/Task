@@ -17,6 +17,7 @@
 
 class Picture < ActiveRecord::Base
   belongs_to :photo_picture
+  has_one :picture_order
   default_scope :order => 'pictures.name'
   attr_accessible :name, :image, :title, :alt, :text
 

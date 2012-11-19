@@ -1,22 +1,11 @@
 <div class="row">
+   <%= render 'shared/error_messages', :object => @order %>
   <div class="span3">
-
-<%= simple_form_for @order, :html => { :multipart => true } do |f| %>
-  <%= render 'shared/error_messages', :object => f.object %>
-
-	<%= render "#{@order.current_step}_step", :f => f %>
-
-  <p><%= f.button :submit, 'Continue' %></p>
-  <p><%= f.button :submit, "Back", :name => "back_button" unless @order.first_step? %></p>
-<% end %>
-
+	<%= render "form"%>
   </div>
 
   <div class="span6 order_right">
-	<%= label_tag t "frames" %>
-	<% if @order.current_step == 'picture' %>
+          <%= label_tag t "frames" %>
 	  <%= image_tag 'picture_frame_types.png', size: "500x500"  %>'
-	<% end %>
   </div>
-
 </div>

@@ -1,42 +1,36 @@
-<%- model_class = PictureOrder -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
-
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:size) %>:</strong></dt>
+  <dt><strong><%= t('.human_count') %></strong></dt>
+  <dd><%= @picture_order.human_count %></dd>x
+  <dt><strong><%= t('.size') %></strong></dt>
   <dd><%= @picture_order.size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:human_count) %>:</strong></dt>
-  <dd><%= @picture_order.human_count %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:gel) %>:</strong></dt>
+  <dt><strong><%= t('.frame') %></strong></dt>
+  <dd><%= @picture_order.frame %></dd>
+  <dt><strong><%= t('.gel') %></strong></dt>
   <dd><%= @picture_order.gel %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>
-  <dd><%= image_tag @picture_order.image, size: '100x100' %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
+  <dt><strong><%= t('.picture') %></strong></dt>
+  <dd><%= image_tag @picture.image_mini %></dd>
+
+  <dt><strong><%= t('.photo') %></strong></dt>
+   <% @images.each do |img| %>
+  <%= image_tag img.image_url, size: '200x200' %>
+  <% end %>
   <dd><%= @picture_order.comments %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
-  <dd><%= @picture_order.user.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_mname) %>:</strong></dt>
-  <dd><%= @picture_order.user.mname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_surname) %>:</strong></dt>
-  <dd><%= @picture_order.user.surname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_email) %>:</strong></dt>
-  <dd><%= @picture_order.user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_address) %>:</strong></dt>
-  <dd><%= @picture_order.user.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_tel) %>:</strong></dt>
-  <dd><%= @picture_order.user.tel %></dd>
+  <dt><strong><%= t('.user_name') %></strong></dt>
+  <dd><%= @picture_order.user_name %></dd>
+  <dt><strong><%= t('.user_mname') %></strong></dt>
+  <dd><%= @picture_order.user_mname %></dd>
+  <dt><strong><%= t('.user_surname') %></strong></dt>
+  <dd><%= @picture_order.user_surname %></dd>
+  <dt><strong><%= t('.user_email') %>:</strong></dt>
+  <dd><%= @picture_order.user_email %></dd>
+  <dt><strong><%= t('.user_address') %>:</strong></dt>
+  <dd><%= @picture_order.user_address %></dd>
+  <dt><strong><%= t('.user_tel') %>:</strong></dt>
+  <dd><%= @picture_order.user_tel %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              new_picture_order_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_picture_order_path(@picture_order), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              picture_order_path(@picture_order),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
 </div>
