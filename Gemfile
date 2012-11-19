@@ -5,8 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'thin'
-
+gem 'thin'
 gem 'devise'
 gem 'rails_admin'
 gem 'jquery-rails'
