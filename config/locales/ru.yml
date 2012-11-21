@@ -15,6 +15,7 @@ ru:
   errors:
     messages:
       extension_white_list_error: "Допустимые форматы для фото: jpg jpeg gif png"
+  picker_browse: "Open"
   layouts:
     application:
       title: "Главная"

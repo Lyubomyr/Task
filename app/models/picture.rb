@@ -19,7 +19,7 @@ class Picture < ActiveRecord::Base
   belongs_to :photo_picture
   has_one :picture_order
   default_scope :order => 'pictures.name'
-  attr_accessible :name, :image, :title, :alt, :text
+  attr_accessible :name, :image, :title, :alt, :text, :image_mini
 
   delegate :id_on_photo_picture, to: :picture_order, allow_nil: true
   extend FriendlyId
