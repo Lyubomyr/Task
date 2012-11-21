@@ -2,8 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+#multistep functionality find in multistep.js
+
+
+
 jQuery ->
 
+  $("#new_picture_order").formToWizard({ submitButton: 'submit' })
   pictures = $('#picture_order_picture_id').html()
 
   category = $('#photo_pictures :selected').text()
@@ -20,7 +25,7 @@ jQuery ->
 
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('fieldset').hide()
+    $(this).closest('div').hide()
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->

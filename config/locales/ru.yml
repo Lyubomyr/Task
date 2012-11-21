@@ -45,6 +45,10 @@ ru:
   picture_orders:
     form:
       add_fields: "+ еще 1 фото"
+      order: "Опции заказа"
+      data: "Данные"
+      user: "Пользователь"
+      ordered: "Заказать"
     show:
       human_count: "Количество персон на фото:"
       size: "Размер полотна:"

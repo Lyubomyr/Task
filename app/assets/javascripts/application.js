@@ -15,3 +15,4 @@
 //= require twitter/bootstrap
 //= require socials
 //= require picture_orders
+//= require multistep

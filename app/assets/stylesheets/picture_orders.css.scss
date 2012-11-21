@@ -2,11 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.order_right{
-	padding: 80px 0;
-}
+div.order_right{ padding: 110px 0; }
 
-fieldset#photos{
- 	border: 1px double silver
+div#photos{ border: 1px double silver }
 
-}
+fieldset { border:none; }
+
+legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;}
+
+label { display:block; margin:15px 0 5px;}
+
+.prev, .next { background-color:#b0232a; padding:5px 10px; color:#fff; text-decoration:none;}
+
+.prev:hover, .next:hover { background-color:#000; text-decoration:none;}
+
+.prev { float:left;}
+
+.next { float:right;}
+
+#steps { list-style:none; width:100%; overflow:hidden; margin:0px; padding:0px;}
+
+#steps li {font-size:24px; float:left; padding:10px; color:#b0b1b3;}
+
+#steps li span {font-size:11px; display:block;}
+
+#steps li.current { color:#000;}
+
+#makeWizard { background-color:#b0232a; color:#fff; padding:5px 10px; text-decoration:none; font-size:18px;}
+
+#makeWizard:hover { background-color:#000;}

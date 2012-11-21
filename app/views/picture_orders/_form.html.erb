@@ -1,33 +1,44 @@
 <%= simple_form_for @order do |f| %>
-  <%= @calc.first_step %>
-  </br>
-  <%= f.error_notification %>
-  <%= f.input :human_count, collection: @human_counts, include_blank: false %>
-  <%= f.input :size, collection: @sizes, :include_blank => false %>
-  <%= f.input :frame, collection: @frames, :include_blank => false %>
+    <%= f.error_notification %>
+ <fieldset>
+   <legend><%= t '.order' %></legend>
+    <%= @calc.first_step %>
+    </br>
+    <%= f.input :human_count, collection: @human_counts, include_blank: false %>
+    <%= f.input :size, collection: @sizes, :include_blank => false %>
+    <%= f.input :frame, collection: @frames, :include_blank => false %>
+    <%= f.input :gel, as: :radio_buttons %>
+    <%= @calc.comments %>
+    <%= f.input :comments, :as => :text, :input_html => { rows: 5 }, label: false %>
+ </fieldset>
 
-  <%= f.label 'image' %>
-  <%= f.simple_fields_for :picture_user_photos, :html => { :multipart => true } do |p| %>
-    <%= render 'picture_user_photo_fields', f: p %>
-  <% end %>
-  <%= link_to_add_fields t('.add_fields'), f, :picture_user_photos %>
+  <fieldset>
+   <legend><%= t '.data' %></legend>
+    <%= @calc.second_step %>
+    <%= f.label 'picture'%>
+    <div class="controls">
+      <%= select_tag 'photo_pictures', options_from_collection_for_select(
+  	    PhotoPicture.all, "id", "name"), class: "select required" %>
+      <%= f.grouped_collection_select :picture_id, PhotoPicture.order(:name),
+			                       :pictures, :name, :id, :name %>
+    </div>
+    <%= f.label 'image' %>
+    <%= f.simple_fields_for :picture_user_photos, :html =>
+					{ :multipart => true } do |p| %>
+        <%= render 'picture_user_photo_fields', f: p %>
+    <% end %>
+    <%= link_to_add_fields t('.add_fields'), f, :picture_user_photos %>
+  </fieldset>
 
-  <%= f.label 'picture'%>
-  <div class="controls">
-  <%= select_tag 'photo_pictures', options_from_collection_for_select(
-	PhotoPicture.all, "id", "name"), class: "select required"%>
-  <%= f.grouped_collection_select :picture_id, PhotoPicture.order(:name),
-			:pictures, :name, :id, :name %>
-  </div>
-  <%= f.input :gel %>
-  <%= @calc.comments %>
-  <%= f.input :comments, :as => :text, :input_html => { rows: 5 }, label: false %>
-
-  <%= f.input :user_name %>
-  <%= f.input :user_mname %>
-  <%= f.input :user_surname %>
-  <%= f.input :user_email %>
-  <%= f.input :user_address %>
-  <%= f.input :user_tel, as: :tel %>
-  <%= f.button :submit %>
+ <fieldset>
+   <legend><%= t '.user' %></legend>
+    <%= @calc.third_step %>
+    <%= f.input :user_name %>
+    <%= f.input :user_mname %>
+    <%= f.input :user_surname %>
+    <%= f.input :user_email %>
+    <%= f.input :user_address %>
+    <%= f.input :user_tel, as: :tel %>
+  </fieldset>
+      <%= f.button :submit, t('.ordered'), id: 'submit' %>
 <% end %>

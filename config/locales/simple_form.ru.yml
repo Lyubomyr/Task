@@ -24,6 +24,7 @@ ru:
         user_email: "Емейл"
         user_tel: "Телефон для связи"
         user_address: "Адресс (куда доставлять)"
+        commit: "Заказать"
     options:
       photo_pictures:
         pairs: 'Парные'
