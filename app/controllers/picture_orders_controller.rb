@@ -4,6 +4,11 @@ class PictureOrdersController < ApplicationController
   def new
     @order = PictureOrder.new()
     @order.picture_user_photos.build
+    if session[:picture]
+	@category = session[:picture][:cat]
+	@picture = session[:picture][:pic]
+	session[:picture] = nil
+    end
   end
 
   def create
@@ -47,7 +52,8 @@ private
     @sizes = PictureOrderCalc.all.map {|calc| calc.size}
     @frames = PictureOrderCalc.all.map {|calc| calc.frame}
     @photo_pictures = PhotoPicture.all
-    @pictures = PhotoPicture.all.map {|category| category.pictures.map {|pic| category.name + ' - ' + pic.name} }
+    @pictures = PhotoPicture.all.map {|category| category.pictures.map {|pic|
+	category.name + ' - ' + pic.name} }
   end
 
 

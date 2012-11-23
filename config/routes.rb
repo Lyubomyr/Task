@@ -10,6 +10,8 @@ Diem::Application.routes.draw do
 
   resources :photo_pictures, :only => [:index, :show] do
   	match ':id' => 'pictures#show', as: :picture
+	match ':id/order' => 'pictures#send_picture', as: :order
+
   end
 
   get ':id', to: 'pages#show', as: :page

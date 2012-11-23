@@ -1,6 +1,6 @@
 <%= simple_form_for @order do |f| %>
     <%= f.error_notification %>
- <fieldset>
+ <fieldset class = "steps">
    <legend><%= t '.order' %></legend>
     <%= @calc.first_step %>
     </br>
@@ -12,15 +12,15 @@
     <%= f.input :comments, :as => :text, :input_html => { rows: 5 }, label: false %>
  </fieldset>
 
-  <fieldset>
+  <fieldset class = "steps">
    <legend><%= t '.data' %></legend>
     <%= @calc.second_step %>
     <%= f.label 'picture'%>
     <div class="controls">
       <%= select_tag 'photo_pictures', options_from_collection_for_select(
-  	    PhotoPicture.all, "id", "name"), class: "select required" %>
-      <%= f.grouped_collection_select :picture_id, PhotoPicture.order(:name),
-			                       :pictures, :name, :id, :name %>
+  	    PhotoPicture.all, "id", "name", @category), class: "select required" %>
+      <%= f.select :picture_id, option_groups_from_collection_for_select(
+	PhotoPicture.order(:name), :pictures, :name, :id, :name, @picture) %>
     </div>
     <%= f.label 'image' %>
     <%= f.simple_fields_for :picture_user_photos, :html =>
@@ -30,7 +30,7 @@
     <%= link_to_add_fields t('.add_fields'), f, :picture_user_photos %>
   </fieldset>
 
- <fieldset>
+ <fieldset class = "steps">
    <legend><%= t '.user' %></legend>
     <%= @calc.third_step %>
     <%= f.input :user_name %>

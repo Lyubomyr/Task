@@ -6,7 +6,7 @@
 
         var element = this;
 
-        var steps = $(element).find("fieldset");
+        var steps = $(element).find("fieldset.steps");
         var count = steps.size();
         var submmitButtonName = "#" + options.submitButton;
         $(submmitButtonName).hide();
@@ -64,11 +64,20 @@
         }
 
         function selectStep(i) {
-	if(i==0){
-    		$('div.order_right').show();}
-	else
-		{$('div.order_right').hide();
-	}
+	switch (i){
+		case 0:
+			$('div#frame_types').show();
+			$('div#picture').hide();
+			break;
+		case 1:
+			$('div#frame_types').hide();
+			$('div#picture').show();
+			break;
+		case 2:
+			$('div#frame_types').hide();
+			$('div#picture').hide();
+		}
+
             $("#steps li").removeClass("current");
             $("#stepDesc" + i).addClass("current");
         }

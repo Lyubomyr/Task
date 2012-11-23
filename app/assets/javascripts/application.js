@@ -16,3 +16,4 @@
 //= require socials
 //= require picture_orders
 //= require multistep
+//= require order_calc

@@ -43,6 +43,9 @@ ru:
       error: "ошибка"
 
   picture_orders:
+    new:
+      price_before: "Цена:"
+      price_after: "грн"
     form:
       add_fields: "+ еще 1 фото"
       order: "Опции заказа"
