@@ -27,7 +27,9 @@
 					{ :multipart => true } do |p| %>
         <%= render 'picture_user_photo_fields', f: p %>
     <% end %>
-    <%= link_to_add_fields t('.add_fields'), f, :picture_user_photos %>
+    <div class = "links" >
+	    <%= link_to_add_association t('.add_fields'), f, :picture_user_photos %>
+    </div>
   </fieldset>
 
  <fieldset class = "steps">

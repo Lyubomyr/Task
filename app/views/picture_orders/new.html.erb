@@ -4,15 +4,19 @@
   </div>
 
   <div class="span6 order_right">
-     <div id = "frame_types"
-	<%= label_tag t('.price_before'), nil, id: 'price_before' %>
-	<%= label_tag 'price', nil, id: 'price' %>
-	<%= label_tag t('.price_after'), nil, id: 'price_after' %>
-	<%= label_tag t "frames" %>
-	<%= image_tag 'picture_frame_types.png', size: "500x500"  %>'
+     <div id = "frame_types">
+	<div id = 'pr'>
+		<%= label_tag t('.price_before'), nil, id: 'price_before' %>
+		<%= label_tag 'price', nil, id: 'price' %>
+		<%= label_tag t('.price_after'), nil, id: 'price_after' %>
+	</div>
+	<div id = "fr_type">
+		<%= label_tag t "frames" %>
+		<%= image_tag 'picture_frame_types.png', size: "500x500"  %>'
+	</div>
      </div>
      <div id = "picture">
-    	<%= image_tag 'pic', id: 'picture' %>
+    	<%= image_tag 'sample.jpg', id: 'picture' %>
      </div>
   </div>
 </div>

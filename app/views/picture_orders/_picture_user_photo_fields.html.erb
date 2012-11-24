@@ -1,5 +1,4 @@
-<fieldset id = "photos">
+<div class = "nested-fields" >
 	<%= f.input :image, as: :file, multiple: true, label: false %>
-	<%= f.input :_destroy, as: :hidden %>
-	<%= link_to t("remove"), "#", class: "remove_fields" %>
-</fieldset>
+	<%= link_to_remove_association t("remove"), f %>
+</div>

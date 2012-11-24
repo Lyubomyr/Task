@@ -17,6 +17,7 @@ gem 'kaminari'
 gem 'simple_form'
 gem 'friendly_id'
 gem 'sitemap_generator'
+gem "cocoon"
 
 
 # Gems used only for assets and not required
