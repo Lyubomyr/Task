@@ -11,8 +11,9 @@
 
 class PhotoPicture < ActiveRecord::Base
   has_many :pictures
-  attr_accessible :name
+  attr_accessible :name, :t_name
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
 end

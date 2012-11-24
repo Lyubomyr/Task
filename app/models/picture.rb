@@ -21,12 +21,14 @@ class Picture < ActiveRecord::Base
   default_scope :order => 'pictures.name'
   attr_accessible :name, :image, :title, :alt, :text, :image_mini
 
-  delegate :id_on_photo_picture, to: :picture_order, allow_nil: true
+  delegate :photo_picture_name, to: :photo_picture, allow_nil: true
+
   extend FriendlyId
   friendly_id :name, use: :scoped, :scope => :photo_picture
 
   def should_generate_new_friendly_id?
 	name_changed?
   end
+
 
 end

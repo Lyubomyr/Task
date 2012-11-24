@@ -18,7 +18,7 @@
     <%= f.label 'picture'%>
     <div class="controls">
       <%= select_tag 'photo_pictures', options_from_collection_for_select(
-  	    PhotoPicture.all, "id", "name", @category), class: "select required" %>
+  	   PhotoPicture.all, "id", "t_name", @category), class: "select required" %>
       <%= f.select :picture_id, option_groups_from_collection_for_select(
 	PhotoPicture.order(:name), :pictures, :name, :id, :name, @picture) %>
     </div>

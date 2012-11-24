@@ -2,7 +2,7 @@
 </br>
 <%= simple_format @picture.text.to_s%>
 </br>
-<%= link_to t('.order'), photo_picture_order_path %>
+<%= button_to t('.order'), photo_picture_order_path %>
 <div>
 	<%= image_tag @picture.image.to_s, alt: @picture.alt%>
 </div>

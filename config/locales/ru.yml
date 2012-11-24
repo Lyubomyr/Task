@@ -30,6 +30,8 @@ ru:
   pictures:
     index:
       title: "Шаблоны картин"
+    show:
+      order: "Оформить заказ с этой картиной"
   views:
     pagination:
       first: "Первая"

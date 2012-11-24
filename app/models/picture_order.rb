@@ -44,5 +44,4 @@ attr_accessible :picture_user_photos_attributes, :picture_id, :size, :human_coun
 	OrderMailer.picture_order_created(self).deliver
   end
 
-
 end
