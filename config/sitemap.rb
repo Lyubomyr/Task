@@ -13,8 +13,7 @@ SitemapGenerator::Sitemap.create do
 
   Picture.find_each do |picture|
       loc = "photo_pictures/" + picture.photo_picture.name + '/' + picture.slug
-      img_loc = "http://www.diem.com.ua/assets/pictures/" +
-		picture.image.from(9)
+      img_loc = "http://www.diem.com.ua" + picture.image
       add(loc, :images => [{:loc => img_loc, :title => picture.title }])
   end
 
