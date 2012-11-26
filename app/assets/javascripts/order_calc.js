@@ -61,4 +61,34 @@ $(document).ready(function($){
 	$('img#picture').attr("src", path[0][2]);
    }
 
+   //work with checkbox ------------------------
+   var redirect = $('#change_picture').attr("value");
+	if(redirect == 'on'){
+		$('#change_picture').hide();
+		$('#change_pic').hide();
+	}
+	else{
+		$('#change_picture').show();
+		$('#change_pic').show();
+		picture_editing();
+	}
+
+   $('#change_picture').change(function() {
+	picture_editing();
+   });
+
+   function picture_editing(){
+	//alert('asdf');
+	if ($('#change_picture').attr('checked') == 'checked') {
+		$('#photo_pictures').attr('disabled', 'disabled');
+		$('#picture_order_picture_id').attr('disabled', 'disabled');
+	}
+	else {
+			$('#photo_pictures').removeAttr('disabled');
+		$('#picture_order_picture_id').removeAttr('disabled');
+	}
+
+
+   }
+
 });

@@ -63,6 +63,7 @@
             });
         }
 
+
         function selectStep(i) {
 	switch (i){
 		case 0:
@@ -81,6 +82,5 @@
             $("#steps li").removeClass("current");
             $("#stepDesc" + i).addClass("current");
         }
-
     }
 })(jQuery); 

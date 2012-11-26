@@ -1,7 +1,8 @@
-<%= simple_form_for @order do |f| %>
+<%= simple_form_for @order, :validate => true do |f| %>
     <%= f.error_notification %>
  <fieldset class = "steps">
    <legend><%= t '.order' %></legend>
+	<%= label_tag 'test', nil, id: 'test'%>
     <%= @calc.first_step %>
     </br>
     <%= f.input :human_count, collection: @human_counts, include_blank: false %>
@@ -16,6 +17,8 @@
   <fieldset class = "steps">
    <legend><%= t '.data' %></legend>
     <%= @calc.second_step %>
+    <%= label_tag t('change_pic'), nil, id: 'change_pic' %>
+    <%= check_box_tag 'change_picture', value = @picture, checked = true, hidden: true %>
     <%= f.label 'picture'%>
     <div class="controls">
       <%= select_tag 'photo_pictures', options_from_collection_for_select(

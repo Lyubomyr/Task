@@ -1,4 +1,4 @@
-<div id = "picture"  itemscope itemtype="http://schema.org/Painting">
+<div id = "picture"  itemscope itemtype="http://schema.org/Product">
 	<%= title @picture.title %>
 	<div itemprop = "description">
 		<%= simple_format @picture.text.to_s%>
@@ -9,4 +9,5 @@
 	<div id = "text">
 		<%= simple_format @page.content.to_s%>
 	</div>
+	<meta itemprop = "url" content = "<%= request.url %>"/>
 </div>

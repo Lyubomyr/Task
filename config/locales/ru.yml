@@ -6,6 +6,7 @@ ru:
   picture_orders: "Заказать"
   frames: "Типы рамок:"
   remove: "удалить фото"
+  change_pic: "Если захотите поменять картину, уберите галочку и выберайте"
 
   errors:
     messages:

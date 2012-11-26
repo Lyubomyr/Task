@@ -19,6 +19,8 @@ class PictureOrdersController < ApplicationController
       flash[:notice] = "PictureOrder saved!"
       redirect_to @order
     else
+    gon.pictures = Picture.all.map{|pic| [pic.photo_picture_id, pic.id,
+						pic.image_mini]} if gon
       render "new"
     end
   end

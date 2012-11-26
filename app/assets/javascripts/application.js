@@ -18,3 +18,5 @@
 //= require multistep
 //= require order_calc
 //= require cocoon
+//= require rails.validations
+//= require rails.validations.simple_form
