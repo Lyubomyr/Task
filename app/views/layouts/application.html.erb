@@ -2,6 +2,7 @@
 <html>
 <head>
   <title><%= yield(:title)+' -' unless yield(:title).blank? %> Carpe Diem</title>
+  <%= include_gon %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -62,7 +63,7 @@
 				  </div>
 				  <ul class="nav nav-tabs nav-stacked">
 					<% PhotoPicture.all.each do |category| %>
-					  <li><%= link_to t(category.name),
+					  <li><%= link_to category.t_name,
 					photo_picture_path(category) %></li>
 					<% end %>
 				  </ul>

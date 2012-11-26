@@ -1,10 +1,12 @@
-<%= title @picture.title %>
-</br>
-<%= simple_format @picture.text.to_s%>
-</br>
-<%= button_to t('.order'), photo_picture_order_path %>
-<div>
-	<%= image_tag @picture.image.to_s, alt: @picture.alt%>
+<div id = "picture"  itemscope itemtype="http://schema.org/Painting">
+	<%= title @picture.title %>
+	<div itemprop = "description">
+		<%= simple_format @picture.text.to_s%>
+	</div>
+	<%= button_to t('.order'), photo_picture_order_path %>
+	<span id = "pic_name" itemprop = "name"> <%= @picture.title %> </span>
+	<%= image_tag @picture.image.to_s, alt: @picture.alt, itemprop: "image" %>
+	<div id = "text">
+		<%= simple_format @page.content.to_s%>
+	</div>
 </div>
-</br>
-<%= simple_format @page.content.to_s%>

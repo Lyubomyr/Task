@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'sitemap_generator'
 gem "cocoon"
+gem "gon"
 
 
 # Gems used only for assets and not required

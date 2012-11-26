@@ -25,9 +25,7 @@ ru:
         user_tel: "Телефон для связи"
         user_address: "Адресс (куда доставлять)"
         commit: "Заказать"
-    options:
-      photo_pictures:
-        pairs: 'Парные'
+
     # Labels and hints examples
     # labels:
     #   defaults:

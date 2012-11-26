@@ -7,6 +7,7 @@
 #  slug       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  t_name     :string(255)
 #
 
 class PhotoPicture < ActiveRecord::Base

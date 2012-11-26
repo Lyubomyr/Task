@@ -6,7 +6,8 @@
     </br>
     <%= f.input :human_count, collection: @human_counts, include_blank: false %>
     <%= f.input :size, collection: @sizes, :include_blank => false %>
-    <%= f.input :frame, collection: @frames, :include_blank => false %>
+    <%= f.input :frame, collection: @frames, :include_blank => false,
+						hint: t(".right_frame") %>
     <%= f.input :gel, as: :radio_buttons %>
     <%= @calc.comments %>
     <%= f.input :comments, :as => :text, :input_html => { rows: 5 }, label: false %>
@@ -20,15 +21,17 @@
       <%= select_tag 'photo_pictures', options_from_collection_for_select(
   	   PhotoPicture.all, "id", "t_name", @category), class: "select required" %>
       <%= f.select :picture_id, option_groups_from_collection_for_select(
-	PhotoPicture.order(:name), :pictures, :name, :id, :name, @picture) %>
+	PhotoPicture.order(:name), :pictures, :t_name, :id, :name, @picture) %>
     </div>
-    <%= f.label 'image' %>
-    <%= f.simple_fields_for :picture_user_photos, :html =>
-					{ :multipart => true } do |p| %>
-        <%= render 'picture_user_photo_fields', f: p %>
-    <% end %>
-    <div class = "links" >
+    <div id = "photos">
+	<%= f.label 'image' %>
+	<%= f.simple_fields_for :picture_user_photos, :html =>
+				{ :multipart => true } do |p| %>
+		<%= render 'picture_user_photo_fields', f: p %>
+	<% end %>
+	<div class = "links" >
 	    <%= link_to_add_association t('.add_fields'), f, :picture_user_photos %>
+	</div>
     </div>
   </fieldset>
 
