@@ -28,7 +28,7 @@ class PictureOrder < ActiveRecord::Base
 
 attr_accessible :picture_user_photos_attributes, :picture_id, :size, :human_count,
 	:gel, :frame, :comments, :user_name, :user_mname, :user_surname, :user_email,
-	:user_tel, :user_address, :data, :expires_at
+	:user_tel, :user_address, :data, :expires_at, :price
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :user_name, presence: true, length: { maximum: 50 }

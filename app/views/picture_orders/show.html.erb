@@ -1,12 +1,21 @@
+<% title t '.order' %>
 <dl class="dl-horizontal">
+<h4>
+  <dt><strong><%= t('.order_made') %></strong></dt>
+  <dd><%= @picture_order.created_at.to_date.to_s %></dd>
+  <dt><strong><%= t('.price') %></strong></dt>
+  <dd><%= @picture_order.price  %></dd>
+  <dt><strong><%= t('.status') %></strong></dt>
+  <dd><%= t @picture_order.status  %></dd>
+</h4>
   <dt><strong><%= t('.human_count') %></strong></dt>
-  <dd><%= @picture_order.human_count %></dd>x
+  <dd><%= @picture_order.human_count %></dd>
   <dt><strong><%= t('.size') %></strong></dt>
   <dd><%= @picture_order.size %></dd>
   <dt><strong><%= t('.frame') %></strong></dt>
   <dd><%= @picture_order.frame %></dd>
   <dt><strong><%= t('.gel') %></strong></dt>
-  <dd><%= @picture_order.gel %></dd>
+  <dd><%= t t("#{@picture_order.gel}_val")  %></dd>
   <dt><strong><%= t('.picture') %></strong></dt>
   <dd><%= image_tag @picture.image_mini %></dd>
 
@@ -24,13 +33,9 @@
   <dd><%= @picture_order.user_surname %></dd>
   <dt><strong><%= t('.user_email') %>:</strong></dt>
   <dd><%= @picture_order.user_email %></dd>
-  <dt><strong><%= t('.user_address') %>:</strong></dt>
-  <dd><%= @picture_order.user_address %></dd>
   <dt><strong><%= t('.user_tel') %>:</strong></dt>
   <dd><%= @picture_order.user_tel %></dd>
+  <dt><strong><%= t('.user_address') %>:</strong></dt>
+  <dd><%= @picture_order.user_address %></dd>
 </dl>
-
-<div class="form-actions">
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_picture_order_path(@picture_order), :class => 'btn' %>
 </div>

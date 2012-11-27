@@ -3,28 +3,29 @@
  <fieldset class = "steps">
    <legend><%= t '.order' %></legend>
 	<%= label_tag 'test', nil, id: 'test'%>
-    <%= @calc.first_step %>
-    </br>
+    <%= simple_format @calc.first_step.to_s %>
     <%= f.input :human_count, collection: @human_counts, include_blank: false %>
     <%= f.input :size, collection: @sizes, :include_blank => false %>
     <%= f.input :frame, collection: @frames, :include_blank => false,
 						hint: t(".right_frame") %>
     <%= f.input :gel, as: :radio_buttons %>
-    <%= @calc.comments %>
+    <%= simple_format @calc.comments.to_s %>
     <%= f.input :comments, :as => :text, :input_html => { rows: 5 }, label: false %>
  </fieldset>
 
   <fieldset class = "steps">
    <legend><%= t '.data' %></legend>
-    <%= @calc.second_step %>
+    <%= simple_format @calc.second_step.to_s %>
     <%= label_tag t('change_pic'), nil, id: 'change_pic' %>
     <%= check_box_tag 'change_picture', value = @picture, checked = true, hidden: true %>
-    <%= f.label 'picture'%>
-    <div class="controls">
-      <%= select_tag 'photo_pictures', options_from_collection_for_select(
-  	   PhotoPicture.all, "id", "t_name", @category), class: "select required" %>
-      <%= f.select :picture_id, option_groups_from_collection_for_select(
-	PhotoPicture.order(:name), :pictures, :t_name, :id, :name, @picture) %>
+    <div id = "picture_block">
+	    <%= f.label 'picture'%>
+	    <div class="controls">
+	      <%= select_tag 'photo_pictures', options_from_collection_for_select(
+	  	   PhotoPicture.all, "id", "t_name", @category), class: "select required" %>
+	      <%= f.select :picture_id, option_groups_from_collection_for_select(
+		PhotoPicture.order(:name), :pictures, :t_name, :id, :name, @picture) %>
+	    </div>
     </div>
     <div id = "photos">
 	<%= f.label 'image' %>
@@ -40,13 +41,14 @@
 
  <fieldset class = "steps">
    <legend><%= t '.user' %></legend>
-    <%= @calc.third_step %>
+    <%= simple_format @calc.third_step.to_s %>
     <%= f.input :user_name %>
     <%= f.input :user_mname %>
     <%= f.input :user_surname %>
     <%= f.input :user_email %>
     <%= f.input :user_address %>
-    <%= f.input :user_tel, as: :tel %>
+    <%= f.input :user_tel %>
+    <%= f.input :price, as: :hidden %>
   </fieldset>
       <%= f.button :submit, t('.ordered'), id: 'submit' %>
 <% end %>

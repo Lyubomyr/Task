@@ -9,14 +9,17 @@ class PictureOrdersController < ApplicationController
     if session[:picture]
 	@category = session[:picture][:cat]
 	@picture = session[:picture][:pic]
+	@image = Picture.find(@picture).image_mini
     end
   end
 
   def create
+    @image = nil
     @order = PictureOrder.new(params[:picture_order])
+    @order.price = params[:picture_order][:price]
 
     if @order.save
-      flash[:notice] = "PictureOrder saved!"
+      flash[:notice] = PictureOrderCalc.first.greeting
       redirect_to @order
     else
     gon.pictures = Picture.all.map{|pic| [pic.photo_picture_id, pic.id,
@@ -36,9 +39,9 @@ private
 
   def content_init
     @calc = PictureOrderCalc.first
-    @human_counts = PictureOrderCalc.all.map {|calc| calc.human_count}
-    @sizes = PictureOrderCalc.all.map {|calc| calc.size}
-    @frames = PictureOrderCalc.all.map {|calc| calc.frame}
+    @human_counts = PictureOrderCalc.pluck(:human_count).select {|hum| hum unless 		hum.empty? }
+    @sizes = PictureOrderCalc.pluck(:size).select {|size| size unless size.empty?}
+    @frames = PictureOrderCalc.pluck(:frame).select {|frame| frame unless frame.empty?}
   end
 
 

@@ -80,12 +80,14 @@ $(document).ready(function($){
    function picture_editing(){
 	//alert('asdf');
 	if ($('#change_picture').attr('checked') == 'checked') {
-		$('#photo_pictures').attr('disabled', 'disabled');
-		$('#picture_order_picture_id').attr('disabled', 'disabled');
+		//$('#photo_pictures').attr('disabled', 'disabled');
+		//$('#picture_order_picture_id').attr('disabled', 'disabled');
+		$('#picture_block').hide();
 	}
 	else {
-			$('#photo_pictures').removeAttr('disabled');
-		$('#picture_order_picture_id').removeAttr('disabled');
+		$('#picture_block').show();
+			//$('#photo_pictures').removeAttr('disabled');
+		//$('#picture_order_picture_id').removeAttr('disabled');
 	}
 
 

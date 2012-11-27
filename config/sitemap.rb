@@ -1,4 +1,4 @@
-# Set the host name for URL creation
+ Set the host name for URL creation
 # Use rake sitemap:refresh
 
 #SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'

@@ -10,6 +10,9 @@
 		<%= label_tag 'price', nil, id: 'price' %>
 		<%= label_tag t('.price_after'), nil, id: 'price_after' %>
 	</div>
+	<% if @image %>
+	    	<%= image_tag @image, id: 'picture', size: "120x120" %>
+	<% end %>
 	<div id = "fr_type">
 		<%= label_tag t "frames" %>
 		<%= image_tag 'picture_frame_types.png', size: "500x500"  %>'

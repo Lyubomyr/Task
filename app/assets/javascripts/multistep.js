@@ -81,6 +81,8 @@
 
             $("#steps li").removeClass("current");
             $("#stepDesc" + i).addClass("current");
+	//grab price ----------------------------------------
+            $('#picture_order_price').attr('value', parseInt($('#price').text()));
         }
     }
 })(jQuery); 
