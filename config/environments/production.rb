@@ -52,10 +52,11 @@ Diem::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 	config.action_mailer.delivery_method = :smtp
 
-	#alternate port "587", auth can be "plain" and "login"
+	#port can be "465" or "587", auth can be "plain" and "login"
 	config.action_mailer.smtp_settings = {
-		:address => 'smtp.gmail.com',
-		:port => 465,
+		:address => "smtp.gmail.com",
+		:port => 587,
+		:domain => 'diem.com.ua',
 		:authentication => 'plain',
 		:user_name => 'info@diem.com.ua',
 		:password => 'CarpeDiem321',
