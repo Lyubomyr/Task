@@ -2,7 +2,8 @@
 				@picture_order.user_mname %>
 Мы приняли Ваш заказ, и скоро с Вами свяжутся по указанному телефону:
 <%= @picture_order.user_tel %>
-Текущий статус заказа Вы можете увидить перейдя по ссылке:
-<%= link_to ("http://www.diem.com.ua/picture_orders/" + @picture_order.slug) %>
+Детали и текущий статус заказа Вы можете увидить перейдя по ссылке:
+<%= link_to "Ваш заказ на сайте" "http://www.diem.com.ua/picture_orders/"
+						+ @picture_order.slug %>
 
 Администрация "Carpe Diem" желает Вам хорошого дня!
