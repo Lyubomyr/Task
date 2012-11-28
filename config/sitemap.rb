@@ -1,7 +1,9 @@
-# Set the host name for URL creation
 # Use rake sitemap:refresh
 
-#SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+require 'rubygems'
+require 'sitemap_generator'
+
+SitemapGenerator::Sitemap.sitemaps_path = "#{Rails.root}/public/"
 SitemapGenerator::Sitemap.default_host = "http://www.diem.com.ua"
 
 SitemapGenerator::Sitemap.create do
