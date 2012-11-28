@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'sitemap_generator'
 
-SitemapGenerator::Sitemap.public_path = "#{Rails.root}/public/"
+SitemapGenerator::Sitemap.public_path = "public/"
 SitemapGenerator::Sitemap.default_host = "http://www.diem.com.ua"
 
 SitemapGenerator::Sitemap.create do
