@@ -42,9 +42,7 @@ class PictureOrder < ActiveRecord::Base
   validates :user_tel, presence: true, length: { maximum: 20 }
   validates :comments, :length => { :maximum => 500 }
 
-  #def picture_order_created_email
-	#OrderMailer.picture_order_created(self).deliver
-  #end
+private
 
   def link
 	"#{user_surname} #{Date.today.to_s}".parameterize

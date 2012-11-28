@@ -20,6 +20,7 @@ class PictureOrdersController < ApplicationController
 
     if @order.save
       OrderMailer.picture_order_created(@order).deliver
+      OrderMailer.picture_order_created_user(@order).deliver
       flash[:notice] = PictureOrderCalc.first.greeting
       redirect_to @order
     else
