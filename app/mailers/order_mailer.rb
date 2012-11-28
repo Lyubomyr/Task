@@ -9,6 +9,7 @@ class OrderMailer < ActionMailer::Base
   def picture_order_created(picture_order)
     @picture_order = picture_order
 
-    mail to: "fedorniakl@gmail.com", cc: "brusd.com@gmail.com",  subject: "New picture order"
+  mail ( to: "fedorniakl@gmail.com", subject: "New picture order" )
+ #mail to: "fedorniakl@gmail.com", cc: "brusd.com@gmail.com",  subject: "New picture order"
   end
 end

@@ -19,6 +19,7 @@ class PictureOrdersController < ApplicationController
     @order.price = params[:picture_order][:price]
 
     if @order.save
+      OrderMailer.picture_order_created(@order).deliver
       flash[:notice] = PictureOrderCalc.first.greeting
       redirect_to @order
     else
