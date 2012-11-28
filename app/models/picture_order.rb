@@ -26,9 +26,11 @@ class PictureOrder < ActiveRecord::Base
   has_many :picture_user_photos
   accepts_nested_attributes_for :picture_user_photos, allow_destroy: true
 
-attr_accessible :picture_user_photos_attributes, :picture_id, :size, :human_count,
+  attr_accessible :picture_user_photos_attributes, :picture_id, :size, :human_count,
 	:gel, :frame, :comments, :user_name, :user_mname, :user_surname, :user_email,
 	:user_tel, :user_address, :data, :expires_at, :price
+  extend FriendlyId
+  friendly_id :link, use: :slugged
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :user_name, presence: true, length: { maximum: 50 }
@@ -42,6 +44,10 @@ attr_accessible :picture_user_photos_attributes, :picture_id, :size, :human_coun
 
   def picture_order_created_email
 	OrderMailer.picture_order_created(self).deliver
+  end
+
+  def link
+	"#{user_surname} #{Date.today.to_s}".parameterize
   end
 
 end

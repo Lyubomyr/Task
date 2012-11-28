@@ -4,7 +4,7 @@
   <dt><strong><%= t('.order_made') %></strong></dt>
   <dd><%= @picture_order.created_at.to_date.to_s %></dd>
   <dt><strong><%= t('.price') %></strong></dt>
-  <dd><%= @picture_order.price  %></dd>
+  <dd><%= @picture_order.price + (t'.grn') %></dd>
   <dt><strong><%= t('.status') %></strong></dt>
   <dd><%= t @picture_order.status  %></dd>
 </h4>
@@ -16,26 +16,28 @@
   <dd><%= @picture_order.frame %></dd>
   <dt><strong><%= t('.gel') %></strong></dt>
   <dd><%= t t("#{@picture_order.gel}_val")  %></dd>
+  <dd><%= @picture_order.comments %></dd>
+  </br>
   <dt><strong><%= t('.picture') %></strong></dt>
   <dd><%= image_tag @picture.image_mini %></dd>
-
+  <br/>
   <dt><strong><%= t('.photo') %></strong></dt>
-   <% @images.each do |img| %>
-  <%= image_tag img.image_url, size: '200x200' %>
-  <% end %>
-  <dd><%= @picture_order.comments %></dd>
-
+  <dd>
+	  <% @images.each do |img| %>
+	  	<%= image_tag img.image_url, size: '200x200' %>
+	  <% end %>
+  </dd>
+  <br/>
   <dt><strong><%= t('.user_name') %></strong></dt>
-  <dd><%= @picture_order.user_name %></dd>
-  <dt><strong><%= t('.user_mname') %></strong></dt>
-  <dd><%= @picture_order.user_mname %></dd>
+  <dd><%= @picture_order.user_name + " " %>
+  <%= @picture_order.user_mname %></dd>
   <dt><strong><%= t('.user_surname') %></strong></dt>
   <dd><%= @picture_order.user_surname %></dd>
-  <dt><strong><%= t('.user_email') %>:</strong></dt>
+  <dt><strong><%= t('.user_email') %></strong></dt>
   <dd><%= @picture_order.user_email %></dd>
-  <dt><strong><%= t('.user_tel') %>:</strong></dt>
+  <dt><strong><%= t('.user_contact') %></strong></dt>
   <dd><%= @picture_order.user_tel %></dd>
-  <dt><strong><%= t('.user_address') %>:</strong></dt>
   <dd><%= @picture_order.user_address %></dd>
+
 </dl>
 </div>
