@@ -54,7 +54,7 @@ Diem::Application.configure do
 
 	config.action_mailer.smtp_settings = {
 		:address => 'smtp.gmail.com',
-		:port => 25,
+		:port => 465,
 		:authentication => :login,
 		:user_name => 'info@diem.com.ua',
 		:password => 'CarpeDiem321' }
