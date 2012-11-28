@@ -52,12 +52,14 @@ Diem::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 	config.action_mailer.delivery_method = :smtp
 
+	#alternate port "587", auth can be "plain" and "login"
 	config.action_mailer.smtp_settings = {
 		:address => 'smtp.gmail.com',
 		:port => 465,
-		:authentication => :login,
+		:authentication => 'plain',
 		:user_name => 'info@diem.com.ua',
-		:password => 'CarpeDiem321' }
+		:password => 'CarpeDiem321',
+		:enable_starttls_auto => true }
 
 	config.action_mailer.raise_delivery_errors = true
   # Enable threaded mode
