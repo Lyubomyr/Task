@@ -1,6 +1,8 @@
 Здравствуйте уважаемый <%= (@picture_order.user_name + " " + @picture_order.user_mname) %>
+
 Мы приняли Ваш заказ, и скоро с Вами свяжутся по указанному телефону:
 <%= @picture_order.user_tel %>
+
 Детали и текущий статус заказа Вы можете увидеть перейдя по ссылке:
 <%= "http://www.diem.com.ua/picture_orders/"+ @picture_order.slug %>
 
