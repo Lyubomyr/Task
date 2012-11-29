@@ -11,11 +11,10 @@ ru:
   false_val: "Нет"
   true_val: "Да"
 
-  order_mailer:
-    picture_order_created:
-      subject: "Заказали Фото Картину"
-    picture_order_created_user:
-      subject: "Carpe Diem - Заказ Фото Картины"
+  picture_order_created:
+    subject: "Заказали Фото Картину"
+  picture_order_created_user:
+    subject: "Carpe Diem - Заказ Фото Картины"
   errors:
     messages:
       extension_white_list_error: "Допустимые форматы для фото: jpg jpeg gif png"
