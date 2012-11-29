@@ -1,13 +1,15 @@
 <div id = "picture"  itemscope itemtype="http://schema.org/Product">
 	<%= title @picture.title %>
+	<%= link_to t(".back"), :back, class: "back" %>
 	<div itemprop = "description">
 		<%= simple_format @picture.text.to_s%>
 	</div>
-	<%= button_to t('.order'), photo_picture_order_path %>
+	<%= button_to t('.order'), photo_picture_order_path, class: "btn btn-info" %>
 	<span id = "pic_name" itemprop = "name"> <%= @picture.title %> </span>
 	<%= image_tag @picture.image.to_s, alt: @picture.alt, itemprop: "image" %>
 	<div id = "text">
 		<%= simple_format @page.content.to_s%>
 	</div>
 	<meta itemprop = "url" content = "<%= request.url %>"/>
+	<%= link_to t(".back"), :back, class: "back" %>
 </div>

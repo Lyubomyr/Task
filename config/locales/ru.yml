@@ -35,6 +35,7 @@ ru:
       title: "Шаблоны картин"
     show:
       order: "Оформить заказ с этой картиной"
+      back: "Назад"
   views:
     pagination:
       first: "Первая"

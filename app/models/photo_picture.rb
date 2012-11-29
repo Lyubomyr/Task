@@ -17,4 +17,6 @@ class PhotoPicture < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  default_scope order(:t_name)
+
 end
