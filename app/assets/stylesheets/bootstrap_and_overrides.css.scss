@@ -1,0 +1,148 @@
+// Set the correct sprite paths
+$iconSpritePath: image-path('glyphicons-halflings.png');
+$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
+
+$navbarBackground: #555;
+$navbarBackgroundHighlight: #888;
+$navbarText: #eee;
+$navbarLinkColor: #eee;
+
+// Core variables and mixins
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
+
+// CSS Reset
+@import "bootstrap/reset";
+
+// Grid system and page structure
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import "bootstrap/layouts";
+
+// Base CSS
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
+
+// Components: common
+//@import "bootstrap/sprites";
+@import "bootstrap/dropdowns";
+//@import "bootstrap/wells";
+//@import "bootstrap/component-animations";
+@import "bootstrap/close";
+
+// Components: Buttons & Alerts
+@import "bootstrap/buttons";
+//@import "bootstrap/button-groups";
+@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "bootstrap/navs";
+//@import "bootstrap/navbar";
+//@import "bootstrap/breadcrumbs";
+//@import "bootstrap/pagination";
+//@import "bootstrap/pager";
+
+// Components: Popovers
+//@import "bootstrap/modals";
+//@import "bootstrap/tooltip";
+//@import "bootstrap/popovers";
+
+// Components: Misc
+//@import "bootstrap/thumbnails";
+//@import "bootstrap/media";
+//@import "bootstrap/labels-badges";
+//@import "bootstrap/progress-bars";
+//@import "bootstrap/accordion";
+//@import "bootstrap/carousel";
+//@import "bootstrap/hero-unit";
+
+// Utility classes
+@import "bootstrap/utilities"; // Has to be last to override when necessary
+
+
+body { padding-top: 10px; }
+@import "bootstrap-responsive";
+
+//Custom--------------------------------------------------
+
+.dl-horizontal dt {
+  float: left;
+  width: 220px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dl-horizontal dd {
+  margin-left: 250px;
+}
+
+a{
+  color: #FF8801;
+}
+
+div#logo{
+  padding: 0 0 0px 10px;
+}
+
+div.orange{
+	background: url(menu.gif) top left repeat-x;
+	padding: none;
+}
+
+ul#menu li a{
+	//background:#000 url(menu.gif) top left repeat-x;
+	margin:0 0 0 5px;
+	color: white;
+	font-size: 20px;
+}
+ul#menu li a:hover{
+	background: none;
+	margin:0 0 0 5px;
+	color: black;
+}
+
+div#left{
+     height: 260px;
+}
+
+div#socials{
+     padding: 10px 0;
+     bottom: 0px;
+}
+
+div#submenu{
+	background:#000 url(menu.gif) top left repeat-x;
+	color: white;
+	font-size: 20px;
+}
+
+div.main{
+	height: 400px;
+}
+
+ul.nav-stacked a{
+        color: black;
+}
+
+ul.nav-stacked a:hover{
+	background:   #FF8801;
+	color:  white	;
+}
+
+div.footer{
+     height: 30px;
+     padding: 20px 0;
+     bottom: 0px;
+}
+
+div.copy{
+     background: orange;
+     text-align: center;
+     font-size: 14px;
+     padding: 5px 0;
+}

@@ -2,8 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+nav.pagination{
+padding: 5px 0;
+}
+
 nav.pagination a,
 nav.pagination span{
 	padding: 0 3px;
 	border-style: none;
+}
+
+nav.pagination span.next,
+nav.pagination span.prev{
+	float: none;
+	background-color: transparent;
 }
