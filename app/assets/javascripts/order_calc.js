@@ -34,10 +34,23 @@ $(document).ready(function($){
   	var h_int = parseInt(human_count.match(/\d{2,}/));
 	var s_int = parseInt(size.match(/\d{3,}/));
 	var f_int = parseInt(frame.match(/\d{2,}/));
+	var f_num = parseInt(frame.match(/^\d{1}/));
 
 	var s1 = parseInt(size.match(/^\d*/));
 	var s2 = parseInt(size.substr(3,2));
-	var long = ((s1+s2)*2*0.01)+(s1+s2)*2*0.001;
+	var long = 1;
+	switch(f_num){
+		case 1,2,3:
+			long = ((s1+s2)*2*(6*8));
+			break;
+		case 4:
+			long = ((s1+s2)*2*(8*8));
+			break;
+		case 5:
+			long = ((s1+s2)*2*(9*8));
+			break;
+	}
+
 	var pr = h_int+s_int+Math.round(f_int*long);
 	$('#price').text(pr);
    }
