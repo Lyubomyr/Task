@@ -40,18 +40,24 @@ $(document).ready(function($){
 	var s2 = parseInt(size.substr(3,2));
 	var long = 1;
 	switch(f_num){
-		case 1,2,3:
-			long = ((s1+s2)*2*(6*8));
+		case 1:
+			long = ((s1+s2)*2+(6*8));
+			break;
+		case 2:
+			long = ((s1+s2)*2+(6*8));
+			break;
+		case 3:
+			long = ((s1+s2)*2+(6*8));
 			break;
 		case 4:
-			long = ((s1+s2)*2*(8*8));
+			long = ((s1+s2)*2+(8*8));
 			break;
 		case 5:
-			long = ((s1+s2)*2*(9*8));
+			long = ((s1+s2)*2+(9*8));
 			break;
 	}
 
-	var pr = h_int+s_int+Math.round(f_int*long);
+	var pr = h_int+s_int+Math.round(f_int*long*0.01);
 	$('#price').text(pr);
    }
 
