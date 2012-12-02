@@ -42,7 +42,7 @@ private
   def content_init
     @calc = PictureOrderCalc.first
     @human_counts = PictureOrderCalc.pluck(:human_count).select {|hum| hum unless 		hum.empty? }
-    @sizes = PictureOrderCalc.pluck(:size).select {|size| size unless size.empty?}
+    @sizes = PictureOrderCalc.order(:id).pluck(:size).select {|size| size unless size.empty?}
     @frames = PictureOrderCalc.pluck(:frame).select {|frame| frame unless frame.empty?}
   end
 
