@@ -53,16 +53,16 @@
         function createNextButton(i) {
             var stepName = "step" + i;
             $("#" + stepName + "commands").append("<a href='#' id='" + stepName + "Next' class='next'>Вперед ></a>");
-
+	  if (valid(i)){
             $("#" + stepName + "Next").bind("click", function(e) {
                 $("#" + stepName).hide();
                 $("#step" + (i + 1)).show();
                 if (i + 2 == count)
                     $(submmitButtonName).show();
-                selectStep(i + 1);
+		selectStep(i + 1);
             });
+	  }
         }
-
 
         function selectStep(i) {
 	switch (i){
@@ -84,5 +84,15 @@
 	//grab price ----------------------------------------
             $('#picture_order_price').attr('value', parseInt($('#price').text()));
         }
+
+	//validation--------------------------
+	function valid(i) {
+	    	if (i == 1 && $("input.file").attr("name")){
+
+			return true; }
+		else{
+			return true;
+		}
+	}
     }
 })(jQuery); 

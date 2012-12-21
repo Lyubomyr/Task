@@ -42,12 +42,12 @@
  <fieldset class = "steps">
    <legend><%= t '.user' %></legend>
     <%= simple_format @calc.third_step.to_s %>
-    <%= f.input :user_name, :validate => { :presence => true } %>
+    <%= f.input :user_name, :validate => true %>
     <%= f.input :user_mname %>
-    <%= f.input :user_surname, validate: true %>
-    <%= f.input :user_email, hint: "example@mail.com", validate: true %>
+    <%= f.input :user_surname %>
+    <%= f.input :user_email, hint: "example@mail.com" %>
     <%= f.input :user_address %>
-    <%= f.input :user_tel, validate: true %>
+    <%= f.input :user_tel %>
     <%= f.input :price, as: :hidden %>
   </fieldset>
       <%= f.button :submit, t('.ordered'), id: 'submit', class: "btn btn-large btn-warning" %>
